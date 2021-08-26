@@ -1,0 +1,84 @@
+﻿@model IEnumerable<FullTextSearch.Entity.Exemplar>
+@{
+    ViewData["Title"] = "Search Page";
+}
+
+<div class="x_panel">
+
+    <div class="x_content">
+
+        <div class="row" style="margin-top: 20px">
+            <form method="GET" action="/Exemplar/Search">
+                <p><label>Pesquisa: <input type="text" name="busca" value="@ViewData["busca"]"/></label></p>
+                <p> <input type="submit" value="Pesquisar" class="btn btn-primary" /></p>
+            </form>
+        </div>
+
+        <table class="table table-striped table-bordered datatable no-footer">
+            <thead>
+                <tr>
+                    <th> RegistroSistema</th>
+                    <th> Titulo</th>
+                    <th> SubTitulo</th>
+                    <th> Assunto</th>
+                    <th> Autor</th>
+                    <th> TipoMaterial</th>
+                    <th> Quantidade</th>
+                    <th> Ano</th>
+                    <th> Edicao</th>
+                    <th> Editora</th>
+                    <th> Isbn</th>
+                    <th> Issn</th>
+                    <th data-sortable="false"></th>
+                </tr>
+            </thead>
+
+            @if (Model != null)
+            {
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.RegistroSistema)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.SubTitulo)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Assunto)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Autor.Nome)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.TipoMaterial)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Quantidade)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Ano)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Edicao)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Editora)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Isbn)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.Issn)
+                        </td>
+                    </tr>
+                 }
+                    
+                }
+            </table>
+    </div>
+</div>

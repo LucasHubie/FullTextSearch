@@ -9,5 +9,7 @@ namespace FullTextSearch.Interface
     public interface IExemplarDAL
     {
         IEnumerable<Exemplar> GetAllExemplar();
+
+        IEnumerable<Exemplar> busca(string busca);
     }
 }
