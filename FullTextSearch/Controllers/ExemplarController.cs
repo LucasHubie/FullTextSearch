@@ -15,29 +15,7 @@ namespace FullTextSearch.Controllers
         {
             _exemplar = exemplar;
         }
-        public IActionResult Index(string busca)
-        {
-            ViewData["busca"] = busca;
-
-            List<Exemplar> listaExemplar = new List<Exemplar>();
-
-            //listaExemplar = _exemplar.GetAllExemplar().ToList();
-
-            //return View(listaExemplar);
-
-            if (!String.IsNullOrEmpty(busca))
-            {
-                listaExemplar = _exemplar.busca(busca).ToList();
-
-                return View(listaExemplar);
-
-            }
-            else
-            {
-                listaExemplar = _exemplar.GetAllExemplar().ToList();
-                return View(listaExemplar.First());
-            }
-        }
+       
         
         public IActionResult Search(String busca)
         {
@@ -47,6 +25,18 @@ namespace FullTextSearch.Controllers
             if (!String.IsNullOrEmpty(busca))
             {
                 return View(_exemplar.busca(busca));
+            }
+
+            return View();
+        }
+
+        public IActionResult FTS(String busca)
+        {
+            ViewData["busca"] = busca;
+
+            if (!String.IsNullOrEmpty(busca))
+            {
+                return View(_exemplar.FTS(busca));
             }
 
             return View();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,8 +18,14 @@ namespace FullTextSearch.Entity
         public string Edicao { get; set; }
         public string Isbn { get; set; }
         public string Issn { get; set; }
-        public virtual Autor Autor { get; set; }
-        public virtual Editora Editora { get; set; }
-        public virtual TipoMaterial TipoMaterial { get; set; }
+
+        //[Display(Name = "Autor")]
+        public string AutorNome { get; set; }
+        public string EditoraNome { get; set; }
+        public string Material { get; set; }
+
+        //public virtual Autor Autor { get; set; }
+        //public virtual Editora Editora { get; set; }
+        //public virtual TipoMaterial TipoMaterial { get; set; }
     }
 }

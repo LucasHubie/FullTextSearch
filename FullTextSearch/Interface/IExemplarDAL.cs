@@ -11,5 +11,6 @@ namespace FullTextSearch.Interface
         IEnumerable<Exemplar> GetAllExemplar();
 
         IEnumerable<Exemplar> busca(string busca);
+        IEnumerable<Exemplar> FTS(string busca);
     }
 }

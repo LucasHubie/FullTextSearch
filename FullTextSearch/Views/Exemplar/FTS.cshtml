@@ -6,13 +6,12 @@
 <div class="x_panel">
 
     <div class="x_content">
-        
+
         <div class="row" style="margin-top: 20px">
-            <form method="GET" action="/Exemplar/Search">
-                <p><label>Pesquisa Normal: <input type="text" name="busca" value="@ViewData["busca"]" /></label></p>
+            <form method="GET" action="/Exemplar/FTS">
+                <p><label>Pesquisa FTS: <input type="text" name="busca" value="@ViewData["busca"]" /></label></p>
                 <p> <input type="submit" value="Pesquisar" class="btn btn-primary" /></p>
             </form>
-            <hr />
         </div>
 
 
